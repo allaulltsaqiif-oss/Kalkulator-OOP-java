@@ -205,8 +205,43 @@ Custom button dengan:
 
 ## 🔢 Layout Tombol
 
-String[][] layout = { {"√", "x²", "AC", "⌫", "÷"}, {"sin", "7", "8", "9", "×"}, {"cos", "4", "5", "6", "-"}, {"tan", "1", "2", "3", "+"}, {"log", "±", "0", ".", "="} };
----
+## 🔢 Layout Tombol
+
+Kalkulator menggunakan **grid 5 × 5** yang terdiri dari tombol fungsi, angka, operator, dan tombol hasil.
+
+| Baris | Kolom 1 | Kolom 2 | Kolom 3 | Kolom 4 | Kolom 5 |
+| :---: | :-----: | :-----: | :-----: | :-----: | :-----: |
+| **1** |    √    |    x²   |    AC   |    ⌫   |    ÷    |
+| **2** |   sin   |    7    |    8    |    9    |    ×    |
+| **3** |   cos   |    4    |    5    |    6    |    −    |
+| **4** |   tan   |    1    |    2    |    3    |    +    |
+| **5** |   log   |    ±    |    0    |    .    |    =    |
+
+### 🎨 Kategori Tombol
+
+| Kategori          | Tombol                                | Fungsi                        |
+| ----------------- | ------------------------------------- | ----------------------------- |
+| 🔢 **Angka**      | `0–9`                                 | Memasukkan angka              |
+| 🔵 **Operator**   | `+`, `−`, `×`, `÷`                    | Operasi aritmatika            |
+| 🧪 **Scientific** | `√`, `x²`, `sin`, `cos`, `tan`, `log` | Operasi matematika ilmiah     |
+| ⚙️ **Control**    | `AC`, `⌫`, `±`                        | Mengontrol dan mengubah input |
+| 🟢 **Result**     | `=`                                   | Menampilkan hasil kalkulasi   |
+| 🔹 **Decimal**    | `.`                                   | Memasukkan angka desimal      |
+
+Layout tombol tersebut didefinisikan dalam source code menggunakan array 2 dimensi:
+
+```java
+String[][] layout = {
+    {"√", "x²", "AC", "⌫", "÷"},
+    {"sin", "7", "8", "9", "×"},
+    {"cos", "4", "5", "6", "-"},
+    {"tan", "1", "2", "3", "+"},
+    {"log", "±", "0", ".", "="}
+};
+```
+
+Dengan struktur ini, tombol kemudian dibuat secara otomatis dan dimasukkan ke dalam `GridLayout(5, 5)`.
+
 
 ## ⚙️ Cara Kerja Kalkulasi
 
