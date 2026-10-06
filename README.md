@@ -1,4 +1,4 @@
-<div align="center">
+
 # 🧮 Scientific Calculator
 
 <div align="center">
