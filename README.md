@@ -1,37 +1,55 @@
-# Kalkulator-OOP-java
-# 💎 Modern Glassmorphic Java Swing Calculator
+<div align="center">
 
-Aplikasi Kalkulator Desktop bertema **Dark Glassmorphic** ala iOS/macOS yang dibangun menggunakan **Java Swing**. Memiliki antarmuka visual modern dengan teknik *custom rendering* 2D (Anti-Aliasing) untuk hasil tampilan yang halus, tajam, dan responsif tanpa menggunakan pustaka eksternal.
+# 🌌 Obsidian Scientific Calculator
 
----
+<p align="center">
+  <strong>Aplikasi Kalkulator Ilmiah Desktop Modern (Mode Landscape) dengan Dukungan Keyboard & Panel Riwayat</strong>
+</p>
 
-## ✨ Fitur Utama
-
-- **Glassmorphism Dark Theme**: Tampilan *elevated glass display* dengan skema warna *Obsidian* dan *Vibrant Indigo*.
-- **Anti-Aliased Vector Rendering**: Sudut tombol dan layar melengkung secara presisi (*Squircle / Rounded Corners*) tanpa garis bergerigi.
-- **Interaksi Mikro**: Efek visual *hover highlight* dan *pressed feedback* saat tombol ditekan.
-- **Live Expression Tracker**: Menampilkan ekspresi angka dan operator aktif di bagian atas kalkulator.
-- **Operasi Aritmatika Lengkap**:
-  - Penjumlahan (`+`), Pengurangan (`-`), Perkalian (`×`), Pembagian (`÷`).
-  - Persentase (`%`), Hapus per karakter (`⌫`), Positive/Negative Toggle (`±`), dan Reset (`AC`).
-- **Safety Handling**: Proteksi otomatis terhadap kesalahan kalkulasi (seperti pembagian dengan nol).
+[![Java Version](https://img.shields.io/badge/Java-8%2B-ED8B00?style=for-the-badge&logo=java&logoColor=white)](https://www.oracle.com/java/)
+[![GUI Framework](https://img.shields.io/badge/GUI-Java%20Swing-5382A1?style=for-the-badge&logo=openjdk&logoColor=white)](https://docs.oracle.com/javase/8/docs/technologies/desktop/swing.html)
+[![Dependencies](https://img.shields.io/badge/Dependencies-Zero-brightgreen?style=for-the-badge)](#)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
 ---
 
-## 🛠️ Prasyarat & Teknologi
-
-- **Bahasa Pemrograman**: Java (JDK 8 atau versi lebih baru)
-- **GUI Framework**: Java Swing & AWT (Library standar Java, tanpa *dependency* tambahan)
+[✨ Fitur Unggulan](#-fitur-unggulan) • [🎨 Sistem Desain](#-sistem-desain--warna) • [🚀 Cara Menjalankan](#-panduan-menjalankan-aplikasi) • [⌨️ Pintasan Keyboard](#-panduan-pintasan-keyboard)
 
 ---
 
-## 🚀 Cara Menjalankan Aplikasi
+</div>
 
-### 1. Buat File Kode
-Buat file bernama **`Calculator.java`** dan salin seluruh kode Java yang telah disediakan ke dalam file tersebut.
+## 📸 Skema Antarmuka (Landscape Mode)
 
-### 2. Kompilasi Kode
-Buka Terminal atau Command Prompt di direktori tempat file disimpan, lalu jalankan perintah:
+Antarmuka dirancang khusus untuk layar laptop/desktop dengan pembagian dua panel utama (Kalkulator di kiri, Riwayat di kanan):
 
-```bash
-javac Calculator.java
+```text
+┌────────────────────────────────────────────────────────────────────────┐
+│   Scientific Calculator                                          ─ ▢ × │
+├────────────────────────────────────────────────────────────────────────┤
+│  ┌─────────────────────────┐   ┌────────────────────────────────────┐  │
+│  │     1,250 + 450         │   │ Riwayat Kalkulasi                  │  │
+│  │     1,700               │   │ ─────────────────────────────────  │  │
+│  └─────────────────────────┘   │ 1,250 + 450 = 1,700                │  │
+│                                │ sin(90) = 1                        │  │
+│  [ √ ] [x² ] [AC ] [⌫ ] [÷ ]   │ 5² = 25                            │  │
+│  [sin] [ 7 ] [ 8 ] [ 9 ] [× ]  │ log(100) = 2                       │  │
+│  [cos] [ 4 ] [ 5 ] [ 6 ] [- ]  │                                    │  │
+│  [tan] [ 1 ] [ 2 ] [ 3 ] [+ ]  │                                    │  │
+│  [log] [ ± ] [ 0 ] [ . ] [= ]  │ [ Hapus Riwayat ]                  │  │
+│  └─────────────────────────┘   └────────────────────────────────────┘  │
+└────────────────────────────────────────────────────────────────────────┘
+✨ Fitur Unggulan💻
+Landscape Dual-Panel UI: Tata letak melebar yang memaksimalkan ruang layar komputer, memisahkan area input angka dan panel pemantauan riwayat.
+🧮 Operasi Ilmiah (Scientific): Dilengkapi dengan fungsi matematika lanjutan seperti Trigonometri (sin, cos, tan), Logaritma (log), Akar Kuadrat (√), dan Pangkat (x²).
+⌨️ Native Keyboard Integration: Mengetik angka dan operator langsung dari keyboard fisik. Menggunakan teknologi KeyBindings Java untuk mencegah masalah hilangnya fokus (berbeda dengan KeyListener biasa).
+📜 Live History Tracker: Setiap operasi yang berhasil dieksekusi akan langsung dicatat secara runut di panel kanan, lengkap dengan tombol untuk membersihkan riwayat.
+🎨 Anti-Aliased Vector Rendering: Rendering grafis 2D kustom yang menghasilkan tepi tombol dan layar melengkung (Squircle) dengan sangat halus tanpa piksel bergerigi.
+🎨 Sistem Desain & WarnaDibangun dengan estetika Obsidian Dark, memberikan kontras warna yang nyaman di mata untuk penggunaan jangka panjang:Elemen UIKode HexVisualDeskripsiApp Background#0F111A⬛Deep Obsidian untuk latar belakang utamaPanel Base#181A26
+🌑Layar & Panel Riwayat bertema Glass ElevatedBorder Glow#2A2D3E
+🌘Garis batas (outline) pemisah antar panelNumeric Keys#1F2232
+🌚Abu-abu kebiruan gelap untuk angka 0-9Math Functions#2D3148
+🫐Muted Indigo untuk tombol trigonometri & aljabarBasic Operators#6366F1
+🔵Vibrant Indigo sebagai aksen operator dasarEquals & Enter#10B981🟢Emerald Green penanda eksekusi kalkulasi⌨️ Panduan Pintasan KeyboardGunakan keyboard fisikmu untuk mempercepat perhitungan:Angka 0-9 : Ketik langsung dari Numpad atau baris angka atas.Operator + - * / : Menjalankan operasi dasar.Tombol Enter : Mengeksekusi hasil (Sama dengan =).Tombol Backspace : Menghapus satu karakter terakhir (⌫).Tombol Escape (Esc) : Menghapus semua layar / All Clear (AC).🚀 Panduan Menjalankan AplikasiAplikasi ini tidak membutuhkan dependensi eksternal (seperti Maven/Gradle). Kamu hanya membutuhkan Java Development Kit (JDK) 8+.1. Persiapan FileSimpan kode sumber aplikasi ke dalam file bernama ScientificCalculator.java.2. Kompilasi (Build)Buka Terminal atau Command Prompt di direktori tempat kamu menyimpan file, lalu ketik:Bashjavac ScientificCalculator.java
+3. Eksekusi (Run)Setelah proses kompilasi sukses, jalankan program dengan perintah:Bashjava ScientificCalculator
+🏗️ Struktur Kode UtamaProyek ini dibangun secara modular menggunakan komponen kustom untuk memaksimalkan tampilan:ScientificCalculator.java: Kelas utama (JFrame) yang mengatur tata letak BorderLayout dan GridLayout.RoundedPanel.class: Kelas custom untuk menggambar panel layar dan riwayat dengan sudut melengkung.RoundedButton.class: Kelas custom untuk menggambar tombol dengan efek Hover, Pressed, dan teks presisi di tengah.
