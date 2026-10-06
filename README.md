@@ -1,3 +1,4 @@
+<div align="center">
 # 🧮 Scientific Calculator
 
 <div align="center">
@@ -209,13 +210,13 @@ Custom button dengan:
 
 Kalkulator menggunakan **grid 5 × 5** yang terdiri dari tombol fungsi, angka, operator, dan tombol hasil.
 
-| Baris | Kolom 1 | Kolom 2 | Kolom 3 | Kolom 4 | Kolom 5 |
-| :---: | :-----: | :-----: | :-----: | :-----: | :-----: |
-| **1** |    √    |    x²   |    AC   |    ⌫   |    ÷    |
-| **2** |   sin   |    7    |    8    |    9    |    ×    |
-| **3** |   cos   |    4    |    5    |    6    |    −    |
-| **4** |   tan   |    1    |    2    |    3    |    +    |
-| **5** |   log   |    ±    |    0    |    .    |    =    |
+| Kolom 1 | Kolom 2 | Kolom 3 | Kolom 4 | Kolom 5 |
+| :-----: | :-----: | :-----: | :-----: | :-----: |
+|    √    |    x²   |    AC   |    ⌫   |    ÷    |
+|   sin   |    7    |    8    |    9    |    ×    |
+|   cos   |    4    |    5    |    6    |    −    |
+|   tan   |    1    |    2    |    3    |    +    |
+|   log   |    ±    |    0    |    .    |    =    |
 
 ### 🎨 Kategori Tombol
 
