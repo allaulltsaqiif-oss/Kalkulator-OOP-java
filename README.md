@@ -1,11 +1,14 @@
 <div align="center">
-# 🧮 Scientific Calculator
 
-**Aplikasi kalkulator ilmiah berbasis Java Swing dengan UI modern Dark Theme**
+<h1>🧮 Scientific Calculator</h1>
 
-![Java](https://img.shields.io/badge/Java-Swing-orange?style=for-the-badge\&logo=openjdk)
-![UI](https://img.shields.io/badge/UI-Obsidian%20Dark%20Theme-6366F1?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Completed-10B981?style=for-the-badge)
+<p><strong>Aplikasi kalkulator ilmiah berbasis Java Swing dengan UI modern Dark Theme</strong></p>
+
+<p>
+  <img src="https://img.shields.io/badge/Java-Swing-orange?style=for-the-badge&logo=openjdk">
+  <img src="https://img.shields.io/badge/UI-Obsidian%20Dark%20Theme-6366F1?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Status-Completed-10B981?style=for-the-badge">
+</p>
 
 </div>
 
