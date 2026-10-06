@@ -4,10 +4,6 @@
 
 **Aplikasi kalkulator ilmiah berbasis Java Swing dengan UI modern Dark Theme**
 
-Dibangun menggunakan **Java Swing** dengan desain **Obsidian Dark Theme**, tombol rounded, riwayat kalkulasi, operasi matematika dasar, serta fungsi trigonometri dan matematika ilmiah.
-
-<br>
-
 ![Java](https://img.shields.io/badge/Java-Swing-orange?style=for-the-badge\&logo=openjdk)
 ![UI](https://img.shields.io/badge/UI-Obsidian%20Dark%20Theme-6366F1?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Completed-10B981?style=for-the-badge)
@@ -16,56 +12,58 @@ Dibangun menggunakan **Java Swing** dengan desain **Obsidian Dark Theme**, tombo
 
 ---
 
+## 📑 Daftar Isi
+
+* [✨ Tentang Project](#-tentang-project)
+* [🎨 Tampilan & Konsep UI](#-tampilan--konsep-ui)
+
+  * [🌑 Color Palette](#-color-palette)
+* [🚀 Fitur](#-fitur)
+
+  * [Basic Arithmetic](#1-basic-arithmetic)
+  * [Scientific Functions](#2-scientific-functions)
+  * [Calculation History](#calculation-history)
+* [⌨️ Keyboard Support](#️-keyboard-support)
+* [🧩 Struktur Program](#-struktur-program)
+* [🏗️ Komponen Utama](#️-komponen-utama)
+
+  * [`ScientificCalculator`](#scientificcalculator)
+  * [`RoundedPanel`](#roundedpanel)
+  * [`RoundedButton`](#roundedbutton)
+* [🔢 Layout Tombol](#-layout-tombol)
+* [⚙️ Cara Kerja Kalkulasi](#️-cara-kerja-kalkulasi)
+* [🛡️ Error Handling](#️-error-handling)
+* [▶️ Cara Menjalankan](#️-cara-menjalankan)
+
+  * [Requirements](#requirements)
+  * [Compile](#2-compile)
+  * [Run](#3-run)
+* [📁 Struktur Project](#-struktur-project)
+* [📊 Format Angka](#-format-angka)
+* [💡 Contoh Penggunaan](#-contoh-penggunaan)
+* [🎯 Tujuan Project](#-tujuan-project)
+* [🔮 Pengembangan Selanjutnya](#-pengembangan-selanjutnya)
+* [📝 Catatan](#-catatan)
+* [👨‍💻 Teknologi](#️-teknologi)
+
+---
+
 ## ✨ Tentang Project
 
 **Scientific Calculator** adalah aplikasi kalkulator desktop yang dibuat menggunakan **Java Swing**.
 
-Aplikasi ini tidak hanya menyediakan operasi aritmatika dasar, tetapi juga dilengkapi dengan fungsi matematika seperti:
-
-* ➕ Penjumlahan
-* ➖ Pengurangan
-* ✖️ Perkalian
-* ➗ Pembagian
-* √ Akar kuadrat
-* x² Pangkat dua
-* `sin` Sinus
-* `cos` Cosinus
-* `tan` Tangen
-* `log` Logaritma basis 10
-* `±` Mengubah tanda bilangan
-* `⌫` Menghapus angka terakhir
-* `AC` Menghapus kalkulasi
-* 📜 Riwayat kalkulasi
-
-Tampilan aplikasi menggunakan tema gelap dengan panel rounded dan warna berbeda untuk membedakan tombol angka, fungsi, operator, dan hasil.
+Aplikasi menyediakan operasi aritmatika dasar serta fungsi matematika seperti `sin`, `cos`, `tan`, `log`, akar kuadrat, dan pangkat dua.
 
 ---
 
 ## 🎨 Tampilan & Konsep UI
 
-Aplikasi menggunakan konsep **Obsidian Dark Theme**.
+Aplikasi menggunakan konsep **Obsidian Dark Theme** dengan layout dua bagian:
 
-Layout utama dibagi menjadi dua bagian:
+* 🧮 Panel kalkulator
+* 📜 Panel riwayat kalkulasi
 
-```text
-+-------------------------------------------------------------+
-| Scientific Calculator                                 - [] X|
-+-------------------------------------------------------------+
-|  +-----------------------+  +----------------------------+  |
-|  |           1,250 + 450 |  | Riwayat Kalkulasi          |  |
-|  |                 1,700 |  | -------------------------- |  |
-|  +-----------------------+  | 1,250 + 450 = 1,700        |  |
-|                             | sin(90) = 1                |  |
-|  [ v ] [x^2] [AC] [<x] [/]  | 5^2 = 25                   |  |
-|  [sin] [ 7 ] [ 8 ] [ 9 ] [*]  | log(100) = 2             |  |
-|  [cos] [ 4 ] [ 5 ] [ 6 ] [-]  |                          |  |
-|  [tan] [ 1 ] [ 2 ] [ 3 ] [+]  |                          |  |
-|  [log] [ +-] [ 0 ] [ . ] [=]  | [ Hapus Riwayat ]        |  |
-|  +-----------------------+  +----------------------------+  |
-+-------------------------------------------------------------+
-```
-
-Window aplikasi memiliki ukuran **850 × 500 px** dan dibuat tidak dapat di-resize agar layout tetap konsisten.
+Desain menggunakan rounded panel dan rounded button untuk memberikan tampilan yang lebih modern.
 
 ### 🌑 Color Palette
 
@@ -78,11 +76,6 @@ Window aplikasi memiliki ukuran **850 × 500 px** dan dibuat tidak dapat di-resi
 | Function Button   | `#2D3148` |
 | Operator Button   | `#6366F1` |
 | Equal Button      | `#10B981` |
-| Primary Text      | `#F3F4F6` |
-| Secondary Text    | `#8F95B2` |
-| Accent Text       | `#C7D2FE` |
-
-Palet warna tersebut didefinisikan langsung pada class `ScientificCalculator`.
 
 ---
 
@@ -90,7 +83,14 @@ Palet warna tersebut didefinisikan langsung pada class `ScientificCalculator`.
 
 ### 1. Basic Arithmetic
 
-Mendukung operasi matematika dasar:
+Mendukung:
+
+* ➕ Penjumlahan
+* ➖ Pengurangan
+* ✖️ Perkalian
+* ➗ Pembagian
+
+Contoh:
 
 ```text
 10 + 5 = 15
@@ -99,72 +99,23 @@ Mendukung operasi matematika dasar:
 100 ÷ 4 = 25
 ```
 
-Pembagian dengan angka `0` akan menghasilkan status:
-
-```text
-Error
-```
-
-untuk mencegah hasil pembagian yang tidak valid.
-
----
-
 ### 2. Scientific Functions
 
-#### √ Square Root
+Tersedia beberapa fungsi matematika:
 
-Contoh:
+| Tombol | Fungsi                  |
+| ------ | ----------------------- |
+| `√`    | Akar kuadrat            |
+| `x²`   | Pangkat dua             |
+| `sin`  | Sinus                   |
+| `cos`  | Cosinus                 |
+| `tan`  | Tangen                  |
+| `log`  | Logaritma basis 10      |
+| `±`    | Mengubah tanda bilangan |
 
-```text
-√144 = 12
-```
+### Calculation History
 
-Input negatif akan menghasilkan `Error`.
-
-#### x² Square
-
-Contoh:
-
-```text
-12² = 144
-```
-
-#### Trigonometry
-
-Tersedia:
-
-```text
-sin
-cos
-tan
-```
-
-Nilai input untuk fungsi trigonometri diperlakukan sebagai **derajat (degree)**, bukan radian.
-
-Contoh:
-
-```text
-sin(90) = 1
-cos(0)  = 1
-```
-
-Implementasinya menggunakan `Math.toRadians()` sebelum perhitungan trigonometri.
-
-#### log
-
-Fungsi `log` menggunakan **logaritma basis 10**:
-
-```text
-log(100) = 2
-```
-
-Input `0` atau bilangan negatif akan menghasilkan `Error`.
-
----
-
-## 📜 Calculation History
-
-Setiap kalkulasi yang berhasil akan otomatis ditambahkan ke panel **Riwayat Kalkulasi**.
+Setiap kalkulasi yang berhasil akan disimpan pada panel **Riwayat Kalkulasi**.
 
 Contoh:
 
@@ -175,50 +126,28 @@ sin(90) = 1
 5 × 8 = 40
 ```
 
-Riwayat ditampilkan pada `JTextArea` dan dapat dihapus menggunakan tombol:
-
-```text
-Hapus Riwayat
-```
-
 ---
 
 ## ⌨️ Keyboard Support
 
-Aplikasi juga dapat dikontrol menggunakan keyboard.
+Aplikasi dapat dikontrol menggunakan keyboard.
 
-### Angka
-
-```text
-0 1 2 3 4 5 6 7 8 9
-```
-
-### Operator
-
-| Keyboard | Operasi     |
-| -------- | ----------- |
-| `+`      | Penjumlahan |
-| `-`      | Pengurangan |
-| `*`      | Perkalian   |
-| `/`      | Pembagian   |
-| `=`      | Hasil       |
-| `Enter`  | Hasil       |
-
-### Control
-
-| Keyboard    | Fungsi               |
+| Tombol      | Fungsi               |
 | ----------- | -------------------- |
+| `0-9`       | Input angka          |
+| `.`         | Desimal              |
+| `+`         | Penjumlahan          |
+| `-`         | Pengurangan          |
+| `*`         | Perkalian            |
+| `/`         | Pembagian            |
+| `=`         | Menghitung           |
+| `Enter`     | Menghitung           |
 | `Backspace` | Hapus angka terakhir |
 | `Escape`    | Clear / AC           |
-| `.`         | Desimal              |
-
-Keyboard binding diimplementasikan menggunakan `InputMap` dan `ActionMap` Java Swing.
 
 ---
 
 ## 🧩 Struktur Program
-
-Secara umum, program terdiri dari beberapa bagian utama:
 
 ```text
 ScientificCalculator.java
@@ -232,8 +161,7 @@ ScientificCalculator.java
 │   ├── Operator Handling
 │   ├── Calculation
 │   ├── Scientific Operations
-│   ├── History Management
-│   └── Main Method
+│   └── History Management
 │
 ├── RoundedPanel
 │   └── Custom rounded panel
@@ -250,69 +178,36 @@ ScientificCalculator.java
 
 ### `ScientificCalculator`
 
-Class utama yang merupakan `JFrame` sekaligus menangani event tombol melalui `ActionListener`.
+Class utama aplikasi yang menangani:
 
-```java
-public class ScientificCalculator
-        extends JFrame
-        implements ActionListener
-```
-
-State kalkulator disimpan menggunakan beberapa variabel seperti:
-
-```java
-private double firstOperand = 0;
-private String operator = "";
-private boolean isNewInput = true;
-```
-
----
+* Window
+* UI
+* Button
+* Input
+* Kalkulasi
+* History
 
 ### `RoundedPanel`
 
-Custom component untuk membuat panel dengan sudut membulat.
-
-Component menggunakan:
-
-```java
-RoundRectangle2D
-```
-
-dan mengaktifkan:
-
-```java
-RenderingHints.KEY_ANTIALIASING
-```
-
-sehingga tampilan panel terlihat lebih halus.
-
----
+Custom panel untuk membuat container dengan sudut membulat.
 
 ### `RoundedButton`
 
-Custom button yang memberikan tampilan rounded serta efek interaksi.
+Custom button dengan:
 
-Button memiliki tiga kondisi visual:
-
-```text
-Normal
-   ↓
-Hover
-   ↓
-Pressed
-```
-
-Warna button otomatis dibuat lebih terang saat cursor berada di atasnya dan lebih gelap saat ditekan.
+* Rounded corner
+* Hover effect
+* Pressed effect
+* Custom color
+* Custom typography
 
 ---
 
 ## 🔢 Layout Tombol
 
-Tombol kalkulator menggunakan grid **5 × 5**:
-
 ```text
 ┌─────┬─────┬─────┬─────┬─────┐
-│  √  │ x²  │ AC  │ ⌫  │  ÷  │
+│  √  │ x²  │ AC  │  ⌫  │  ÷  │
 ├─────┼─────┼─────┼─────┼─────┤
 │ sin │  7  │  8  │  9  │  ×  │
 ├─────┼─────┼─────┼─────┼─────┤
@@ -324,13 +219,11 @@ Tombol kalkulator menggunakan grid **5 × 5**:
 └─────┴─────┴─────┴─────┴─────┘
 ```
 
-Layout ini didefinisikan melalui array pada source code.
-
 ---
 
 ## ⚙️ Cara Kerja Kalkulasi
 
-Alur kalkulasi utama dapat digambarkan sebagai berikut:
+Alur input:
 
 ```text
 User Input
@@ -350,22 +243,15 @@ processCommand()
     ├── =
     │     └── handleEquals()
     │
-    ├── Scientific Function
-    │     └── handleUnaryOperation()
-    │
-    └── Control
-          ├── AC
-          ├── Backspace
-          └── ±
+    └── Scientific Function
+          └── handleUnaryOperation()
 ```
-
-Semua input tombol terlebih dahulu diproses melalui `processCommand()`, kemudian diarahkan ke handler yang sesuai.
 
 ---
 
 ## 🛡️ Error Handling
 
-Aplikasi memiliki beberapa validasi untuk kondisi matematika yang tidak valid.
+Aplikasi menangani beberapa kondisi matematika yang tidak valid.
 
 ### Division by Zero
 
@@ -373,7 +259,7 @@ Aplikasi memiliki beberapa validasi untuk kondisi matematika yang tidak valid.
 10 ÷ 0
 ```
 
-Output:
+Hasil:
 
 ```text
 Error
@@ -385,7 +271,7 @@ Error
 √-10
 ```
 
-Output:
+Hasil:
 
 ```text
 Error
@@ -398,13 +284,11 @@ log(0)
 log(-10)
 ```
 
-Output:
+Hasil:
 
 ```text
 Error
 ```
-
-Validasi tersebut ditangani menggunakan kondisi matematika dan `ArithmeticException`.
 
 ---
 
@@ -412,76 +296,28 @@ Validasi tersebut ditangani menggunakan kondisi matematika dan `ArithmeticExcept
 
 ### Requirements
 
-Pastikan Java Development Kit (**JDK**) sudah terinstall.
-
-Cek versi Java:
+Pastikan **JDK** sudah terinstall.
 
 ```bash
 java -version
-```
-
-dan:
-
-```bash
 javac -version
 ```
 
----
-
-### 1. Clone / Download Project
-
-Jika project berada di repository Git:
-
-```bash
-git clone <repository-url>
-cd <project-folder>
-```
-
-Atau cukup letakkan file:
-
-```text
-ScientificCalculator.java
-```
-
-dalam sebuah folder.
-
----
-
-### 2. Compile
-
-Jalankan:
+### 1. Compile
 
 ```bash
 javac ScientificCalculator.java
 ```
 
-Jika proses berhasil, Java akan menghasilkan file `.class`.
-
----
-
-### 3. Run
-
-Jalankan:
+### 2. Run
 
 ```bash
 java ScientificCalculator
 ```
 
-Aplikasi kemudian akan membuka window kalkulator.
-
-Method `main()` menjalankan aplikasi menggunakan:
-
-```java
-SwingUtilities.invokeLater(...)
-```
-
-sehingga UI dijalankan melalui Event Dispatch Thread Java Swing.
-
 ---
 
 ## 📁 Struktur Project
-
-Untuk project sederhana, struktur dapat dibuat seperti:
 
 ```text
 scientific-calculator/
@@ -490,139 +326,115 @@ scientific-calculator/
 └── README.md
 ```
 
-Jika dikembangkan lebih lanjut:
-
-```text
-scientific-calculator/
-│
-├── src/
-│   └── ScientificCalculator.java
-│
-├── README.md
-└── .gitignore
-```
-
 ---
 
 ## 📊 Format Angka
 
-Hasil kalkulasi diformat menggunakan:
+Hasil kalkulasi menggunakan format:
 
 ```java
 DecimalFormat("#.##########")
 ```
 
-Dengan demikian hasil tidak ditampilkan dengan jumlah digit desimal yang berlebihan.
-
-Selain itu, input angka dibatasi hingga **15 karakter** pada display.
+Sehingga hasil tidak menampilkan angka desimal yang terlalu panjang.
 
 ---
 
 ## 💡 Contoh Penggunaan
 
-### Perhitungan Aritmatika
+### Aritmatika
 
 ```text
-Input:
 25 × 4
-
-Output:
+↓
 100
 ```
 
-### Perhitungan Trigonometri
+### Trigonometri
 
 ```text
-Input:
 sin(90)
-
-Output:
+↓
 1
 ```
 
 ### Pangkat
 
 ```text
-Input:
 12 → x²
-
-Output:
+↓
 144
 ```
 
 ### Akar
 
 ```text
-Input:
 144 → √
-
-Output:
+↓
 12
 ```
-
-Setiap operasi yang berhasil juga dicatat pada panel history.
 
 ---
 
 ## 🎯 Tujuan Project
 
-Project ini dapat digunakan sebagai contoh implementasi:
+Project ini dapat digunakan untuk mempelajari:
 
-* Java GUI menggunakan Swing
-* Event handling
+* Java Swing
+* GUI Development
+* Event Handling
 * `ActionListener`
 * `InputMap`
 * `ActionMap`
-* Object-oriented programming
-* Custom Swing component
-* Operasi matematika menggunakan `java.lang.Math`
-* Pengelolaan state aplikasi
-* Pembuatan UI dark theme
-* Implementasi calculation history
+* Object-Oriented Programming
+* Custom Swing Components
+* Mathematical Operations
+* UI/UX dasar pada Java Desktop
 
 ---
 
 ## 🔮 Pengembangan Selanjutnya
 
-Beberapa fitur yang dapat ditambahkan pada versi berikutnya:
+Beberapa fitur yang dapat ditambahkan:
 
-* [ ] Tombol `π`
-* [ ] Tombol `e`
-* [ ] Pangkat dengan nilai bebas `xʸ`
+* [ ] `π`
+* [ ] `e`
+* [ ] `xʸ`
 * [ ] `1/x`
-* [ ] Faktorial `n!`
-* [ ] Modulo `%`
-* [ ] Fungsi `ln`
-* [ ] Mode radian
-* [ ] Memory calculation (`M+`, `M-`, `MR`, `MC`)
-* [ ] Tema Light/Dark
-* [ ] Export riwayat kalkulasi
-* [ ] Shortcut keyboard untuk fungsi scientific
-* [ ] Responsif terhadap perubahan ukuran window
-
-> Fitur-fitur di atas merupakan **ide pengembangan**, bukan fitur yang saat ini terdapat pada source code.
+* [ ] Faktorial
+* [ ] Modulo
+* [ ] `ln`
+* [ ] Mode Radian
+* [ ] Memory Calculator
+* [ ] Light/Dark Theme
+* [ ] Export History
+* [ ] Shortcut untuk fungsi scientific
 
 ---
 
 ## 📝 Catatan
 
-Aplikasi saat ini menggunakan Java Swing dan seluruh komponen UI berada dalam satu file `ScientificCalculator.java`.
+Seluruh implementasi saat ini berada dalam satu file:
 
-Desain custom dibuat menggunakan `RoundedPanel` dan `RoundedButton`, sementara efek hover dan pressed dibuat melalui `MouseListener`.
+```text
+ScientificCalculator.java
+```
+
+UI custom dibuat menggunakan `RoundedPanel` dan `RoundedButton`.
 
 ---
 
 ## 👨‍💻 Teknologi
 
-| Teknologi                | Penggunaan         |
-| ------------------------ | ------------------ |
-| **Java**                 | Bahasa pemrograman |
-| **Java Swing**           | GUI                |
-| **AWT**                  | Event & graphics   |
-| **Math API**             | Operasi matematika |
-| **DecimalFormat**        | Formatting hasil   |
-| **RoundRectangle2D**     | Rounded UI         |
-| **InputMap / ActionMap** | Keyboard shortcut  |
+| Teknologi               | Penggunaan         |
+| ----------------------- | ------------------ |
+| ☕ Java                  | Bahasa pemrograman |
+| 🖥️ Java Swing          | GUI                |
+| 🎨 AWT                  | Graphics & Event   |
+| 🧮 Math API             | Operasi matematika |
+| 🔢 DecimalFormat        | Format angka       |
+| 🔲 RoundRectangle2D     | Rounded UI         |
+| ⌨️ InputMap / ActionMap | Keyboard shortcut  |
 
 ---
 
