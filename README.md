@@ -29,7 +29,7 @@
 * [🧩 Struktur Program](#-struktur-program)
 * [🏗️ Komponen Utama](#️-komponen-utama)
 
-  * [`ScientificCalculator`](#scientificcalculator)
+  * [`Calculator`](#Calculator)
   * [`RoundedPanel`](#roundedpanel)
   * [`RoundedButton`](#roundedbutton)
 * [🔢 Layout Tombol](#-layout-tombol)
@@ -152,9 +152,9 @@ Aplikasi dapat dikontrol menggunakan keyboard.
 ## 🧩 Struktur Program
 
 ```text
-ScientificCalculator.java
+Calculator.java
 │
-├── ScientificCalculator
+├── Calculator
 │   ├── UI Initialization
 │   ├── Button Creation
 │   ├── Keyboard Binding
@@ -162,7 +162,7 @@ ScientificCalculator.java
 │   ├── Number Handling
 │   ├── Operator Handling
 │   ├── Calculation
-│   ├── Scientific Operations
+│   ├── Math Operations
 │   └── History Management
 │
 ├── RoundedPanel
@@ -178,7 +178,7 @@ ScientificCalculator.java
 
 ## 🏗️ Komponen Utama
 
-### `ScientificCalculator`
+### `Calculator`
 
 Class utama aplikasi yang menangani:
 
@@ -330,13 +330,13 @@ javac -version
 ### 1. Compile
 
 ```bash
-javac ScientificCalculator.java
+javac Calculator.java
 ```
 
 ### 2. Run
 
 ```bash
-java ScientificCalculator
+java Calculator
 ```
 
 ---
@@ -346,7 +346,7 @@ java ScientificCalculator
 ```text
 scientific-calculator/
 │
-├── ScientificCalculator.java
+├── Calculator.java
 └── README.md
 ```
 
@@ -441,7 +441,7 @@ Beberapa fitur yang dapat ditambahkan:
 Seluruh implementasi saat ini berada dalam satu file:
 
 ```text
-ScientificCalculator.java
+Calculator.java
 ```
 
 UI custom dibuat menggunakan `RoundedPanel` dan `RoundedButton`.
