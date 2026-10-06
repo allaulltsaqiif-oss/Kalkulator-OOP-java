@@ -1,7 +1,5 @@
-
-# 🧮 Scientific Calculator
-
 <div align="center">
+# 🧮 Scientific Calculator
 
 **Aplikasi kalkulator ilmiah berbasis Java Swing dengan UI modern Dark Theme**
 
