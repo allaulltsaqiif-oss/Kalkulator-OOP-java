@@ -1,8 +1,8 @@
 <div align="center">
 
-<h1>🧮 Scientific Calculator</h1>
+<h1>🧮 Calculator</h1>
 
-<p><strong>Aplikasi kalkulator ilmiah berbasis Java Swing dengan UI modern Dark Theme</strong></p>
+<p><strong>Aplikasi kalkulator berbasis Java Swing dengan UI modern Dark Theme</strong></p>
 
 <p>
   <img src="https://img.shields.io/badge/Java-Swing-orange?style=for-the-badge&logo=openjdk">
@@ -52,9 +52,9 @@
 
 ## ✨ Tentang Project
 
-**Scientific Calculator** adalah aplikasi kalkulator desktop yang dibuat menggunakan **Java Swing**.
+**Calculator** adalah aplikasi kalkulator desktop yang dibuat menggunakan **Java Swing**.
 
-Aplikasi menyediakan operasi aritmatika dasar serta fungsi matematika seperti `sin`, `cos`, `tan`, `log`, akar kuadrat, dan pangkat dua.
+Aplikasi menyediakan operasi aritmatika dasar serta beberapa fungsi matematika seperti `sin`, `cos`, `tan`, `log`, akar kuadrat, dan pangkat dua.
 
 ---
 
@@ -464,7 +464,7 @@ UI custom dibuat menggunakan `RoundedPanel` dan `RoundedButton`.
 
 <div align="center">
 
-### 🧮 Scientific Calculator
+### 🧮 Calculator
 
 **Simple calculation. Scientific functions. Modern interface.**
 
