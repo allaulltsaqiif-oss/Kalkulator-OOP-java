@@ -47,6 +47,7 @@
 * [🔮 Pengembangan Selanjutnya](#-pengembangan-selanjutnya)
 * [📝 Catatan](#-catatan)
 * [👨‍💻 Teknologi](#️-teknologi)
+* 
 
 ---
 
@@ -204,8 +205,6 @@ Custom button dengan:
 * Custom typography
 
 ---
-
-## 🔢 Layout Tombol
 
 ## 🔢 Layout Tombol
 
